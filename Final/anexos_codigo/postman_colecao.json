@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "Projeto Integrador - API Ferramentas (POST e PUT)",
+    "description": "Coleção para a demonstração. Importe no Postman ou Insomnia (File > Import). Ordem: 1) POST, veja o id retornado; 2) PUT com esse id na URL; 3) GET para conferir.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost/projeto_ferramentas" }
+  ],
+  "item": [
+    {
+      "name": "1) POST - Cadastrar ferramenta (INSERT)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/ferramentas.php",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Furadeira de Impacto\",\n  \"patrimonio\": \"FER-001\",\n  \"status\": \"disponivel\",\n  \"localizacao\": \"Almoxarifado A\"\n}"
+        }
+      }
+    },
+    {
+      "name": "2) PUT - Enviar para manutenção (UPDATE)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/ferramentas.php?id=1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"em_manutencao\",\n  \"localizacao\": \"Oficina Central\"\n}"
+        }
+      }
+    },
+    {
+      "name": "3) GET - Conferir a ferramenta (SELECT)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/ferramentas.php?id=1"
+      }
+    }
+  ]
+}

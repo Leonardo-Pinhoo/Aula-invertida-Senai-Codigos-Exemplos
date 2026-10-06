@@ -1,0 +1,9 @@
+name: trabalho_ferramentas
+description: Configuração só para a IDE reconhecer o pacote http usado em Final/anexos_codigo/ferramenta_service.dart. Não faz parte da entrega.
+publish_to: none
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  http: ^1.2.0
